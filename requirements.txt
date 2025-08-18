@@ -3,4 +3,5 @@ numpy
 kaggle
 matplotlib
 scikit-learn
+scipy
 -e .
