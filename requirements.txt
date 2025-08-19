@@ -4,4 +4,5 @@ kaggle
 matplotlib
 scikit-learn
 scipy
+seaborn
 -e .
