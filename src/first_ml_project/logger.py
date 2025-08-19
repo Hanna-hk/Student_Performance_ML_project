@@ -14,3 +14,4 @@ logging.basicConfig(
     level=logging.INFO,
 
 )
+logger = logging.getLogger("first_ml_project")
