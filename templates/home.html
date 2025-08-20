@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Performance Form</title>
+</head>
+<body>
+  <h2>Student Performance Form</h2>
+    <form action="{{ url_for('predict_datapoint')}}" method="post">
+    
+    <label for="hours_studied">Hours Studied (int):</label><br>
+    <input type="number" id="hours_studied" name="hours_studied" min="0" required><br><br>
+    
+    <label for="previous_scores">Previous Scores (int):</label><br>
+    <input type="number" id="previous_scores" name="previous_scores" min="0" required><br><br>
+    
+    <label for="activities">Activities (str):</label><br>
+    <input type="text" id="activities" name="activities" required><br><br>
+    
+    <label for="sleep_hours">Sleep Hours (int):</label><br>
+    <input type="number" id="sleep_hours" name="sleep_hours" min="0" max="24" required><br><br>
+    
+    <label for="question_practiced">Questions Practiced (int):</label><br>
+    <input type="number" id="question_practiced" name="question_practiced" min="0" required><br><br>
+    
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+  </form>
+  <h2>
+    The prediction is {{results}}
+  </h2>
+</body>
+</html>
