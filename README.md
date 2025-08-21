@@ -31,12 +31,15 @@ Users input data such as study hours, sleep hours, previous scores, participatio
 1. Clone the repository:
 
 git clone https://github.com/Hanna-hk/Student_Performance_ML_project.git
+
 cd Student_Performance_ML_project
 
 2. Create and activate a virtual environment:
 
 python -m venv venv
+
 source venv/bin/activate    # Linux/Mac
+
 venv\Scripts\activate       # Windows
 
 3. Install dependencies:
