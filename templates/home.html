@@ -3,34 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <title>Student Performance Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+      color: #444;
+    }
+
+    input[type="number"], select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    input[type="submit"], input[type="reset"] {
+      width: 48%;
+      padding: 10px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    input[type="reset"] {
+      background-color: #f44336;
+      color: white;
+    }
+
+    input[type="reset"]:hover {
+      background-color: #da190b;
+    }
+
+    .result-box {
+      margin-top: 20px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      max-width: 400px;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
   <h2>Student Performance Form</h2>
-    <form action="{{ url_for('predict_datapoint')}}" method="post">
+  
+  <form id="studentForm" action="{{ url_for('predict_datapoint')}}" method="post">
     
-    <label for="hours_studied">Hours Studied:</label><br>
-    <input type="number" id="hours_studied" name="hours_studied" min="0" max="24" required><br><br>
+    <label for="hours_studied">Hours Studied:</label>
+    <input type="number" id="hours_studied" name="hours_studied" min="0" required>
     
-    <label for="previous_scores">Previous Scores:</label><br>
-    <input type="number" id="previous_scores" name="previous_scores" min="0" max="100" required><br><br>
+    <label for="previous_scores">Previous Scores:</label>
+    <input type="number" id="previous_scores" name="previous_scores" min="0" max="100" required>
 
-    <label for="cars">Activities:</label>
-    <select type="text" id="activities" name="activities" required>
+    <label for="activities">Activities:</label>
+    <select id="activities" name="activities" required>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
-    </select><br><br>
+    </select>
     
-    <label for="sleep_hours">Sleep Hours:</label><br>
-    <input type="number" id="sleep_hours" name="sleep_hours" min="0" max="24" required><br><br>
+    <label for="sleep_hours">Sleep Hours:</label>
+    <input type="number" id="sleep_hours" name="sleep_hours" min="0" max="24" required>
     
-    <label for="question_practiced">Questions Practiced:</label><br>
-    <input type="number" id="question_practiced" name="question_practiced" min="0" required><br><br>
+    <label for="question_practiced">Questions Practiced:</label>
+    <input type="number" id="question_practiced" name="question_practiced" min="0" required>
     
-    <input type="submit" value="Submit">
-    <input type="reset" value="Reset">
+    <div style="display: flex; justify-content: space-between;">
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+    </div>
   </form>
-  <h2>
+
+  <div class="result-box">
     The prediction of the student performance index is {{results}}
-  </h2>
+  </div>
 </body>
 </html>
