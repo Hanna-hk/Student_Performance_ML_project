@@ -19,7 +19,7 @@ Users input data such as study hours, sleep hours, previous scores, participatio
 
 ## Features
 - Data Ingestion - load and split dataset
-- Data Transformation - preprocessiong and feature enggineering
+- Data Transformation - preprocessiong and feature engineering
 - Model Training - train and evaluate ML models
 - Prediction Pipeline - reusable pipeline for inference
 - Flask Web App - interactive UI for predictions
